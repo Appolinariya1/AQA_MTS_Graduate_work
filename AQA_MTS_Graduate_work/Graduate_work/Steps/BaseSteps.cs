@@ -1,6 +1,8 @@
+using OpenQA.Selenium;
+
 namespace Graduate_work.Steps;
 
-public class BaseSteps
+public class BaseSteps(IWebDriver driver)
 {
-    
+    protected readonly IWebDriver Driver = driver;
 }
