@@ -9,7 +9,7 @@ public class ProjectsPage : BasePage
     // Описание элементов
     private static readonly By TitleLabelBy = By.XPath("//h1[text()='Projects']");
     
-    public ProjectsPage(IWebDriver driver, bool openPageByUrl) : base(driver, openPageByUrl)
+    public ProjectsPage(IWebDriver driver, bool openPageByUrl = false) : base(driver, openPageByUrl)
     {
     }
 
