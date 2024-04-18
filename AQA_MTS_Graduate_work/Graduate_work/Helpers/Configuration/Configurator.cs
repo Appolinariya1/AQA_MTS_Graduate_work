@@ -1,4 +1,5 @@
 using System.Reflection;
+using Graduate_work.Models;
 using Microsoft.Extensions.Configuration;
 
 namespace Graduate_work.Helpers.Configuration
@@ -39,10 +40,25 @@ namespace Graduate_work.Helpers.Configuration
                 var child = Configuration.GetSection("AppSettings");
 
                 appSettings.URL = child["URL"];
-                appSettings.Username = child["Username"];
-                appSettings.Password = child["Password"];
 
                 return appSettings;
+            }
+        }
+        
+        public static List<User?> Users
+        {
+            get
+            {
+                List<User?> users = new List<User?>();
+                var child = Configuration.GetSection("Users");
+                foreach (var section in child.GetChildren())
+                {
+                    var user = new User(section["Email"], section["Password"]);
+                    
+                    users.Add(user);
+                }
+
+                return users;
             }
         }
 
