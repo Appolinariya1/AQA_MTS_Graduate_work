@@ -25,4 +25,4 @@ steps:
 - task: DotNetCoreCLI@2
   inputs:
     command: 'test'
-    configuration: 'AQA_MTS_Graduate_work\AQA_MTS_Graduate_work\Graduate_work\Graduate_work.csproj'
+    configuration: 'AQA_MTS_Graduate_work\Graduate_work\Graduate_work.csproj'
