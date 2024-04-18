@@ -31,4 +31,4 @@ steps:
   displayName: Publish Report
   inputs:
     allureVersion: 2.27.0
-    testResultsDir: TestRail/bin/Debug/net8.0/allure-results
+    testResultsDir: .\AQA_MTS_Graduate_work\Graduate_work\bin\Debug\net8.0\allure-results
