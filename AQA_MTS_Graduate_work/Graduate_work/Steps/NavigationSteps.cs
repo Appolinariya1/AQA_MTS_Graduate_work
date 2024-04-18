@@ -1,41 +1,50 @@
 using Graduate_work.Models;
 using Graduate_work.Pages;
+using NUnit.Allure.Attributes;
 using OpenQA.Selenium;
 
 namespace Graduate_work.Steps;
 
 public class NavigationSteps : BaseSteps
 {
-    public NavigationSteps(IWebDriver driver) : base(driver) { }
+    private LoginPage _loginPage;
+    private ProjectsPage _projectsPage;
     
+    public NavigationSteps(IWebDriver driver) : base(driver)
+    {
+        _loginPage = new LoginPage(Driver);
+        _projectsPage = new ProjectsPage(Driver);
+    }
+    
+    [AllureStep]
     public LoginPage NavigateToLoginPage()
     {
         return new LoginPage(Driver);
     }
     
+    [AllureStep]
     public ProjectsPage NavigateToProjectsPage()
     {
         return new ProjectsPage(Driver);
     }
     
+    [AllureStep]
     public ProjectsPage SuccessfulLogin(User? user)
     {
-        return Login<ProjectsPage>(user);
-    }
-    
-    public LoginPage IncorrectLogin(User? user)
-    {
-        return Login<LoginPage>(user);
-    }
-    
-    public T Login<T>(User? user) where T : BasePage
-    {
-        LoginPage = new LoginPage(Driver);
+        _loginPage.EmailInput.SendKeys(user.Email);
+        _loginPage.PswInput.SendKeys(user.Password);
+        _loginPage.ClickLoginButton();
         
-        LoginPage.EmailInput.SendKeys(user.Email);
-        LoginPage.PswInput.SendKeys(user.Password);
-        LoginPage.LoginInButton.Click();
-
-        return (T)Activator.CreateInstance(typeof(T), Driver, false);
+        return new ProjectsPage (Driver);
+    }
+    
+    [AllureStep]
+    public LoginPage IncorrectLogin(string email, string password)
+    {
+        _loginPage.EmailInput.SendKeys(email);
+        _loginPage.PswInput.SendKeys(password);
+        _loginPage.ClickLoginButton();
+        
+        return _loginPage;
     }
 }
