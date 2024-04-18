@@ -1,8 +1,6 @@
-using Graduate_work.Helpers.Configuration;
 using Graduate_work.Pages;
-using Graduate_work.Steps;
 
-namespace Graduate_work.Tests;
+namespace Graduate_work.Tests.GUI;
 
 public class DialogWindowTest : BaseGuiTest
 {
@@ -12,7 +10,7 @@ public class DialogWindowTest : BaseGuiTest
     public void DialogWindowTestInit()
     {
         _projectsPage = NavigationSteps
-            .SuccessfulLogin(Configurator.Users.First(x => x?.Email == "polinaholod97@gmail.com"));
+            .NavigateToProjectsPage();
     }
 
     [Test]

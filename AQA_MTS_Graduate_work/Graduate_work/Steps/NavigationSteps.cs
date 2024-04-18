@@ -1,3 +1,4 @@
+using Graduate_work.Helpers.Configuration;
 using Graduate_work.Models;
 using Graduate_work.Pages;
 using NUnit.Allure.Attributes;
@@ -25,7 +26,7 @@ public class NavigationSteps : BaseSteps
     [AllureStep]
     public ProjectsPage NavigateToProjectsPage()
     {
-        return new ProjectsPage(Driver);
+        return SuccessfulLogin(Configurator.Users.First(x => x?.Email == "polinaholod97@gmail.com"));
     }
     
     [AllureStep]
