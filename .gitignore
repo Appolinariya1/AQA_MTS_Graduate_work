@@ -397,3 +397,4 @@ FodyWeavers.xsd
 # JetBrains Rider
 *.sln.iml
 AQA_MTS_Graduate_work/Graduate_work/obj/
+AQA_MTS_Graduate_work/.idea/
