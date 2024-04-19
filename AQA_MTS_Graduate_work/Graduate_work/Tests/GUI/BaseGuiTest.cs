@@ -1,16 +1,15 @@
 using Graduate_work.Core;
 using Graduate_work.Helpers.Configuration;
-using Graduate_work.Pages;
 using Graduate_work.Steps;
 using NUnit.Allure.Core;
 using OpenQA.Selenium;
 
-namespace Graduate_work.Tests;
+namespace Graduate_work.Tests.GUI;
 
 [Parallelizable(scope: ParallelScope.All)]
 [FixtureLifeCycle(LifeCycle.InstancePerTestCase)]
 [AllureNUnit]
-public class BaseGuiTest
+public abstract class BaseGuiTest
 {
     protected IWebDriver Driver { get; private set; }
     

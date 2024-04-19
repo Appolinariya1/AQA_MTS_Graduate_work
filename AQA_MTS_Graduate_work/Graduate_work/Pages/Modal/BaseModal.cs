@@ -4,7 +4,7 @@ using OpenQA.Selenium;
 
 namespace Graduate_work.Pages.Modal;
 
-public class BaseModal
+public abstract class BaseModal
 {
     protected IWebDriver Driver { get; private set; }
     protected WaitsHelper WaitsHelper { get; private set; }
@@ -14,4 +14,6 @@ public class BaseModal
         Driver = driver;
         WaitsHelper = new WaitsHelper(Driver, TimeSpan.FromSeconds(Configurator.WaitsTimeout));
     }
+    
+    public abstract bool IsModalOpened();
 }

@@ -4,6 +4,7 @@ public class InvalidDataTest : BaseGuiTest
 {
     [Test]
     [Description("Тест на использование некорректных данных")]
+    [Category("Negative")]
     public void InvalidLoginTest()
     {
         Assert.That(NavigationSteps

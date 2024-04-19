@@ -14,6 +14,8 @@ public class DialogWindowTest : BaseGuiTest
     }
 
     [Test]
+    [Description("Тест отображения диалогового окна")]
+    [Category("Positive")]
     public void DialogWindowCreateProjectTest()
     {
         var modal = _projectsPage.ClickCreateProjectButton();

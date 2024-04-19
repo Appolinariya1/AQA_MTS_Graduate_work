@@ -13,4 +13,9 @@ public class WaitsHelper(IWebDriver driver, TimeSpan timeout)
     {
         return _wait.Until(ExpectedConditions.ElementExists(locator)); 
     }
+    
+    public IWebElement WaitForVisibilityLocatedBy(By locator)
+    {
+        return _wait.Until(ExpectedConditions.ElementIsVisible(locator)); //дождаться + условие, что ждем
+    }
 }
