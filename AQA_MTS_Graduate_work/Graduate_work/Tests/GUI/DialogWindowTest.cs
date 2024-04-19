@@ -16,8 +16,8 @@ public class DialogWindowTest : BaseGuiTest
     [Test]
     public void DialogWindowCreateProjectTest()
     {
-        _projectsPage.ClickCreateProjectButton();
+        var modal = _projectsPage.ClickCreateProjectButton();
 
-        Assert.That(_projectsPage.CreateProjectModal.Displayed);
+        Assert.That(modal.ModalElement.Displayed);
     }
 }
