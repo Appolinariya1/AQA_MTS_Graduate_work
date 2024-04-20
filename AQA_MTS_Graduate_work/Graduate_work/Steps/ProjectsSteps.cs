@@ -1,5 +1,6 @@
 using Graduate_work.Pages;
 using Graduate_work.Pages.Modal;
+using NUnit.Allure.Attributes;
 using OpenQA.Selenium;
 
 namespace Graduate_work.Steps;
@@ -14,6 +15,7 @@ public class ProjectsSteps(IWebDriver driver) : BaseSteps(driver)
         _projectsPage = projectsPage;
     }
 
+    [AllureStep("Create new project")]
     public ProjectPage CreateNewProject(string name, string code, string description, string accessType,
         string memberAccess = null)
     {
@@ -26,6 +28,7 @@ public class ProjectsSteps(IWebDriver driver) : BaseSteps(driver)
         return new ProjectPage(Driver, false);
     }
     
+    [AllureStep("Incorrect create new project")]
     public CreateProjectModal FailCreateNewProject(string name, string code, string description, string accessType,
         string memberAccess = null)
     {
