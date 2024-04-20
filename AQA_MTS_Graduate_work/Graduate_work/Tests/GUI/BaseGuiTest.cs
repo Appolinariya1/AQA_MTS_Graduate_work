@@ -1,6 +1,5 @@
 using Graduate_work.Core;
 using Graduate_work.Helpers.Configuration;
-using Graduate_work.Pages;
 using Graduate_work.Steps;
 using NUnit.Allure.Core;
 using OpenQA.Selenium;

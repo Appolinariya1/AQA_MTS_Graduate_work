@@ -1,5 +1,4 @@
 using Graduate_work.Pages;
-using Graduate_work.Pages.Modal;
 using Graduate_work.Steps;
 
 namespace Graduate_work.Tests.GUI;

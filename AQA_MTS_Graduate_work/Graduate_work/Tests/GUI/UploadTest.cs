@@ -1,4 +1,4 @@
-namespace Graduate_work.Tests;
+namespace Graduate_work.Tests.GUI;
 
 public class UploadTest
 {
