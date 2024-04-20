@@ -63,9 +63,9 @@ public class BoundaryTests : BaseGuiTest
             Is.EqualTo("The code may not be greater than 10 characters."));
     }
 
-    [OneTimeTearDown]
+    /*[OneTimeTearDown]
     public void DeleteCreatedProjectsTearDown()
     {
        //допишу после создания метода удаления проекта 
-    }
+    }*/
 }
