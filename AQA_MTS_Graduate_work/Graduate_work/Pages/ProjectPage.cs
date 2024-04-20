@@ -4,17 +4,23 @@ namespace Graduate_work.Pages;
 
 public class ProjectPage : BasePage
 {
-    public ProjectPage(IWebDriver driver, bool openPageByUrl) : base(driver, openPageByUrl)
+    private static string END_POINT = "";
+    
+    private static readonly By CreateCaseButtonBy = By.Id("create-case-button");
+    
+    public ProjectPage(IWebDriver driver, bool openPageByUrl = false) : base(driver, openPageByUrl)
     {
     }
 
     protected override string GetEndpoint()
     {
-        throw new NotImplementedException();
+        return END_POINT;
     }
 
     public override bool IsPageOpened()
     {
-        throw new NotImplementedException();
+       return CreateCaseButton.Displayed;
     }
+
+    public IWebElement CreateCaseButton => WaitsHelper.WaitForExists(CreateCaseButtonBy);
 }

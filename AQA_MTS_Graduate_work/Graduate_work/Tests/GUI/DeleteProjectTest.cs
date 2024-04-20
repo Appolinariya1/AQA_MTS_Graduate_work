@@ -1,6 +1,5 @@
 namespace Graduate_work.Tests;
 
-public class DeleteTest
+public class DeleteProjectTest
 {
-    
 }

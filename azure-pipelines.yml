@@ -6,7 +6,7 @@
 trigger:
 - main
 - develop
-- feature/page_object
+- feature/GUI
 
 pool: local
 

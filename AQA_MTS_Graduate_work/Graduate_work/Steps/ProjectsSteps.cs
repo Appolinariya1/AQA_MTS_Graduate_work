@@ -6,19 +6,35 @@ namespace Graduate_work.Steps;
 
 public class ProjectsSteps(IWebDriver driver) : BaseSteps(driver)
 {
-    private readonly CreateProjectModal _createProjectModal;
     private readonly ProjectsPage _projectsPage;
 
-    public ProjectsSteps(IWebDriver driver, CreateProjectModal createProjectModal, ProjectsPage projectsPage) :
+    public ProjectsSteps(IWebDriver driver, ProjectsPage projectsPage) :
         this(driver)
     {
-        _createProjectModal = createProjectModal;
         _projectsPage = projectsPage;
     }
 
     public ProjectPage CreateNewProject(string name, string code, string description, string accessType,
-        string memberAccess = "all")
+        string memberAccess = null)
     {
+        var modal = _projectsPage.ClickCreateNewProjectButton();
+        modal.FillProjectName(name);
+        modal.FillProjectCode(code);
+        modal.FillProjectDescription(description);
+        modal.SelectAccessType(accessType, memberAccess);
+        modal.ClickCreateProjectButton();
         return new ProjectPage(Driver, false);
+    }
+    
+    public CreateProjectModal FailCreateNewProject(string name, string code, string description, string accessType,
+        string memberAccess = null)
+    {
+        var modal = _projectsPage.ClickCreateNewProjectButton();
+        modal.FillProjectName(name);
+        modal.FillProjectCode(code);
+        modal.FillProjectDescription(description);
+        modal.SelectAccessType(accessType, memberAccess);
+        modal.ClickCreateProjectButton();
+        return modal; 
     }
 }

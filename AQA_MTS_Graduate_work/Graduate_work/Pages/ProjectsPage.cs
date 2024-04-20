@@ -9,10 +9,12 @@ public class ProjectsPage : BasePage
     
     // Описание элементов
     private static readonly By TitleLabelBy = By.XPath("//h1[text()='Projects']");
-    private static readonly By CreateProjectButtonBy = By.Id("createButton");
-    
-    
-    public ProjectsPage(IWebDriver driver, bool openPageByUrl = false) : base(driver, openPageByUrl)
+    private static readonly By CreateNewProjectButtonBy = By.Id("createButton");
+    private static readonly By SearchForProjectsInputBy = By.XPath("//input[@placeholder='Search for projects']");
+    private static readonly By ProjectMenuButtonBy = By.XPath("//tbody/tr[1]/td[8]/div/button");
+    private static readonly By RemoveProjectButtonBy = By.XPath("//button[text()='Remove']");
+    private static readonly By DeleteProjectButtonBy = By.XPath("//button//span[text()='Delete project']");
+    public ProjectsPage(IWebDriver driver, bool openPageByUrl = true) : base(driver, openPageByUrl)
     {
     }
 
@@ -28,13 +30,27 @@ public class ProjectsPage : BasePage
     
     // Методы
     public IWebElement TitleLabel => WaitsHelper.WaitForExists(TitleLabelBy);
-    public IWebElement CreateProjectButton => WaitsHelper.WaitForExists(CreateProjectButtonBy);
+    public IWebElement CreateNewProjectButton => WaitsHelper.WaitForExists(CreateNewProjectButtonBy);
+    public IWebElement SearchForProjectsInput => WaitsHelper.WaitForExists(SearchForProjectsInputBy);
+    public IWebElement ProjectMenuButton => WaitsHelper.WaitForExists(ProjectMenuButtonBy);
+    public IWebElement RemoveProjectButton => WaitsHelper.WaitForExists(RemoveProjectButtonBy);
+    public IWebElement DeleteProjectButton => WaitsHelper.WaitForExists(DeleteProjectButtonBy);
     
     
     //Методы действий
-    public CreateProjectModal ClickCreateProjectButton()
+    public CreateProjectModal ClickCreateNewProjectButton()
     {
-        CreateProjectButton.Click();
+        CreateNewProjectButton.Click();
         return new CreateProjectModal(Driver);
     }
+
+    public void FillSearchForProjects(string projectName)
+    {
+        SearchForProjectsInput.SendKeys(projectName);
+    }
+
+    public void ClickProjectMenuButton() => ProjectMenuButton.Click();
+    public void ClickRemoveProjectButton() => RemoveProjectButton.Click();
+    public void ClickDeleteProjectButton() => DeleteProjectButton.Click();
+    
 }
