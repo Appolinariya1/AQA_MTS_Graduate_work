@@ -14,7 +14,7 @@ public class LoginPage : BasePage
     private static readonly By ErrorAlertBy = By.XPath("//div[@role='alert']/span/span");
     
     //инициализация класса
-    public LoginPage(IWebDriver driver, bool openPageByUrl = true) : base(driver, openPageByUrl)
+    public LoginPage(IWebDriver driver, bool openPageByUrl = false) : base(driver, openPageByUrl)
     {
     }
 
