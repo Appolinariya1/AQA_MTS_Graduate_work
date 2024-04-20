@@ -8,7 +8,7 @@ public class BoundaryTests : BaseGuiTest
     private ProjectsPage _projectsPage;
     private ProjectsSteps _projectsSteps;
 
-    [OneTimeSetUp]
+    [SetUp]
     public void BoundaryTestsInit()
     {
         _projectsPage = NavigationSteps
