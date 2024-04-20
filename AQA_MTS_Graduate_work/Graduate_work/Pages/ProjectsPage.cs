@@ -11,8 +11,8 @@ public class ProjectsPage : BasePage
     private static readonly By TitleLabelBy = By.XPath("//h1[text()='Projects']");
     private static readonly By CreateNewProjectButtonBy = By.Id("createButton");
     private static readonly By SearchForProjectsInputBy = By.XPath("//input[@placeholder='Search for projects']");
-    private static readonly By ProjectMenuButtonBy = By.XPath("//tbody/tr[1]/td[8]/div/button");
-    private static readonly By RemoveProjectButtonBy = By.XPath("//button[text()='Remove']");
+    private static readonly By ProjectMenuButtonBy = By.XPath("//table//tr//td[last()]/div/button");
+    private static readonly By RemoveProjectButtonBy = By.XPath("//table//tr//td[last()]/div/button/..//ul[@role='menu']/button[text()='Remove']");
     private static readonly By DeleteProjectButtonBy = By.XPath("//button//span[text()='Delete project']");
     public ProjectsPage(IWebDriver driver, bool openPageByUrl = true) : base(driver, openPageByUrl)
     {
