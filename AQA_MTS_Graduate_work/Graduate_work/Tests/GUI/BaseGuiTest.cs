@@ -1,3 +1,4 @@
+using Allure.Net.Commons;
 using Graduate_work.Core;
 using Graduate_work.Helpers.Configuration;
 using Graduate_work.Pages;
@@ -16,6 +17,12 @@ public abstract class BaseGuiTest
     protected NavigationSteps _navigationSteps;
     protected ProjectsSteps _projectsSteps;
 
+    [OneTimeSetUp]
+    public static void GlobalSetup()
+    {
+        AllureLifecycle.Instance.CleanupResultDirectory();
+    }
+    
     [SetUp]
     public void Setup()
     {
