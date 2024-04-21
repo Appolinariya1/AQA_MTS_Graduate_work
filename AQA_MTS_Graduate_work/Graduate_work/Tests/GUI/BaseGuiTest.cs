@@ -16,6 +16,7 @@ public abstract class BaseGuiTest
     protected IWebDriver Driver { get; private set; }
     protected NavigationSteps _navigationSteps;
     protected ProjectsSteps _projectsSteps;
+    protected ProjectSteps _projectSteps;
 
     [OneTimeSetUp]
     public static void GlobalSetup()
@@ -30,6 +31,7 @@ public abstract class BaseGuiTest
 
         _navigationSteps = new NavigationSteps(Driver);
         _projectsSteps = new ProjectsSteps(Driver, new ProjectsPage(Driver));
+        _projectSteps = new ProjectSteps(Driver, new ProjectPage(Driver));
         Driver.Navigate().GoToUrl(Configurator.AppSettings.URL);
     }
 
