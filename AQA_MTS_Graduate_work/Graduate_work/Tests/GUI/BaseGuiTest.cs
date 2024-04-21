@@ -22,7 +22,7 @@ public abstract class BaseGuiTest
     {
         AllureLifecycle.Instance.CleanupResultDirectory();
     }
-    
+
     [SetUp]
     public void Setup()
     {
@@ -36,6 +36,21 @@ public abstract class BaseGuiTest
     [TearDown]
     public void TearDown()
     {
+        try
+        {
+            if (TestContext.CurrentContext.Result.Outcome.Status == NUnit.Framework.Interfaces.TestStatus.Failed)
+            {
+                Screenshot screenshot = ((ITakesScreenshot)Driver).GetScreenshot();
+                byte[] screenshoteBytes = screenshot.AsByteArray;
+
+                AllureApi.AddAttachment("Screenshot", "image/png", screenshoteBytes);
+            }
+        }
+        catch
+        {
+            //ignore
+        }
+
         Driver.Quit();
     }
 }
