@@ -11,6 +11,7 @@ public class ProjectPage : BasePage
     private static readonly By ProjectsMenuRefBy = By.XPath("//a[@href='/projects'][text()='Projects']");
     private static readonly By CreateSuiteButtonBy = By.Id("create-suite-button");
     private static readonly By CreateSuiteOrCaseButtonBy = By.XPath("//button[@aria-label='Create suite or case']");
+    private static readonly By ProjectSettingsButtonBy = By.XPath("//span[text()='Settings']");
     
     public ProjectPage(IWebDriver driver, bool openPageByUrl = false) : base(driver, openPageByUrl)
     {
@@ -30,6 +31,7 @@ public class ProjectPage : BasePage
     public IWebElement ProjectsMenuRef => WaitsHelper.WaitForExists(ProjectsMenuRefBy);
     public IWebElement CreateSuiteButton => WaitsHelper.WaitForExists(CreateSuiteButtonBy);
     public IWebElement CreateSuiteOrCaseButton => WaitsHelper.WaitForExists(CreateSuiteOrCaseButtonBy);
+    public IWebElement ProjectSettingsButton => WaitsHelper.WaitForExists(ProjectSettingsButtonBy);
 
     public void ClickProjectsMenuRef() => ProjectsMenuRef.Click();
 
@@ -38,4 +40,6 @@ public class ProjectPage : BasePage
         CreateSuiteButton.Click();
         return new CreateSuiteModal(Driver);
     }
+
+    public void ClickProjectSettingsButton() => ProjectSettingsButton.Click();
 }

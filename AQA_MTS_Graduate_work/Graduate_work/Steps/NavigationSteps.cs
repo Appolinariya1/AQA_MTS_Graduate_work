@@ -12,12 +12,14 @@ public class NavigationSteps : BaseSteps
     private LoginPage _loginPage;
     private ProjectsPage _projectsPage;
     private ProjectPage _projectPage;
+    private ProjectSettingsPage _projectSettingsPage;
     
     public NavigationSteps(IWebDriver driver) : base(driver)
     {
         _loginPage = new LoginPage(Driver);
         _projectsPage = new ProjectsPage(Driver);
         _projectPage = new ProjectPage(Driver);
+        _projectSettingsPage = new ProjectSettingsPage(Driver);
     }
     
     [AllureStep("Open login page")]
@@ -56,5 +58,11 @@ public class NavigationSteps : BaseSteps
     {
         _projectPage.ClickProjectsMenuRef();
         return _projectsPage;
+    }
+
+    public ProjectSettingsPage NavigateToProjectSettingsPage()
+    {
+        _projectPage.ClickProjectSettingsButton();
+        return _projectSettingsPage;
     }
 }

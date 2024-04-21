@@ -30,7 +30,7 @@ public abstract class BaseGuiTest
         Driver = new Browser().Driver;
 
         _navigationSteps = new NavigationSteps(Driver);
-        _projectsSteps = new ProjectsSteps(Driver, new ProjectsPage(Driver));
+        _projectsSteps = new ProjectsSteps(Driver, new ProjectsPage(Driver), new ProjectSettingsPage(Driver));
         _projectSteps = new ProjectSteps(Driver, new ProjectPage(Driver));
         Driver.Navigate().GoToUrl(Configurator.AppSettings.URL);
     }

@@ -10,7 +10,7 @@ public class HoverTest : BaseGuiTest
     private ProjectPage _projectPage;
 
     [SetUp]
-    public void BoundaryTestsInit()
+    public void HoverTestSetUp()
     {
         _projectsPage = _navigationSteps
             .NavigateToProjectsPage();

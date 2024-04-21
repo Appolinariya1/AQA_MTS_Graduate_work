@@ -7,7 +7,7 @@ public class ReproduceBugTest : BaseGuiTest
     private ProjectsPage _projectsPage;
 
     [SetUp]
-    public void BoundaryTestsInit()
+    public void ReproduceBugSetUp()
     {
         _projectsPage = _navigationSteps
             .NavigateToProjectsPage();

@@ -8,11 +8,19 @@ namespace Graduate_work.Steps;
 public class ProjectsSteps(IWebDriver driver) : BaseSteps(driver)
 {
     private readonly ProjectsPage _projectsPage;
+    private readonly ProjectSettingsPage _projectSettingsPage;
 
     public ProjectsSteps(IWebDriver driver, ProjectsPage projectsPage) :
         this(driver)
     {
         _projectsPage = projectsPage;
+    }
+    
+    public ProjectsSteps(IWebDriver driver, ProjectsPage projectsPage, ProjectSettingsPage projectSettingsPage) :
+        this(driver)
+    {
+        _projectsPage = projectsPage;
+        _projectSettingsPage = projectSettingsPage;
     }
 
     [AllureStep("Create new project")]
@@ -49,5 +57,12 @@ public class ProjectsSteps(IWebDriver driver) : BaseSteps(driver)
         _projectsPage.ClickDeleteProjectButton();
 
         return _projectsPage;
+    }
+
+    [AllureStep("Change project logo")]
+    public void ChangeProjectLogo(string path)
+    {
+        _projectSettingsPage.ChangeLogoButton.Click();
+        _projectSettingsPage.ChangeLogoInput.SendKeys(path);
     }
 }
