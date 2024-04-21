@@ -6,12 +6,11 @@ namespace Graduate_work.Tests.GUI;
 public class CreateProjectTest : BaseGuiTest
 {
     private ProjectsPage _projectsPage;
-    private ProjectsSteps _projectsSteps;
 
     [SetUp]
     public void CreateProjectSetUp()
     {
-        _projectsPage = NavigationSteps
+        _projectsPage = _navigationSteps
             .NavigateToProjectsPage();
         _projectsSteps = new ProjectsSteps(Driver, _projectsPage);
     }
@@ -25,5 +24,13 @@ public class CreateProjectTest : BaseGuiTest
             .CreateNewProject("NormalProject", "01",
                 "few sentences about project", "Private", "All")
             .IsPageOpened);
+    }
+
+    [TearDown]
+    public void DeleteCreatedProjectTearDown()
+    {
+        _navigationSteps.NavigateToProjectsPageFromMenu();
+        _projectsPage.FillSearchForProjects("NormalProject");
+        _projectsSteps.DeleteProject();
     }
 }

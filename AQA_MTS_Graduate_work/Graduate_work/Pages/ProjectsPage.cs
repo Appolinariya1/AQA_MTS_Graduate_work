@@ -14,6 +14,8 @@ public class ProjectsPage : BasePage
     private static readonly By ProjectMenuButtonBy = By.XPath("//table//tr//td[last()]/div/button");
     private static readonly By RemoveProjectButtonBy = By.XPath("//table//tr//td[last()]/div/button/..//ul[@role='menu']/button[text()='Remove']");
     private static readonly By DeleteProjectButtonBy = By.XPath("//button//span[text()='Delete project']");
+    private static readonly By ProjectNotFoundLabelBy =
+        By.XPath("//div[text()='Looks like you don’t have any projects yet.']");
     public ProjectsPage(IWebDriver driver, bool openPageByUrl = true) : base(driver, openPageByUrl)
     {
     }
@@ -35,6 +37,7 @@ public class ProjectsPage : BasePage
     public IWebElement ProjectMenuButton => WaitsHelper.WaitForExists(ProjectMenuButtonBy);
     public IWebElement RemoveProjectButton => WaitsHelper.WaitForExists(RemoveProjectButtonBy);
     public IWebElement DeleteProjectButton => WaitsHelper.WaitForExists(DeleteProjectButtonBy);
+    public IWebElement ProjectNotFoundLabel => WaitsHelper.WaitForExists(ProjectNotFoundLabelBy);
     
     
     //Методы действий

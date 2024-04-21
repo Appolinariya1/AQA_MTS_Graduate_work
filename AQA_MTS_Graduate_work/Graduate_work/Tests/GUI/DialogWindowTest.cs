@@ -9,7 +9,7 @@ public class DialogWindowTest : BaseGuiTest
     [SetUp]
     public void DialogWindowTestInit()
     {
-        _projectsPage = NavigationSteps
+        _projectsPage = _navigationSteps
             .NavigateToProjectsPage();
     }
 

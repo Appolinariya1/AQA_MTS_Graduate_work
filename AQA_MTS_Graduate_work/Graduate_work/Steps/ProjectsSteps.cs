@@ -17,7 +17,7 @@ public class ProjectsSteps(IWebDriver driver) : BaseSteps(driver)
 
     [AllureStep("Create new project")]
     public ProjectPage CreateNewProject(string name, string code, string description, string accessType,
-        string memberAccess = null)
+        string memberAccess = "All")
     {
         var modal = _projectsPage.ClickCreateNewProjectButton();
         modal.FillProjectName(name);
@@ -39,5 +39,15 @@ public class ProjectsSteps(IWebDriver driver) : BaseSteps(driver)
         modal.SelectAccessType(accessType, memberAccess);
         modal.ClickCreateProjectButton();
         return modal; 
+    }
+
+    [AllureStep("Delete project")]
+    public ProjectsPage DeleteProject()
+    {
+        _projectsPage.ClickProjectMenuButton();
+        _projectsPage.ClickRemoveProjectButton();
+        _projectsPage.ClickDeleteProjectButton();
+
+        return _projectsPage;
     }
 }

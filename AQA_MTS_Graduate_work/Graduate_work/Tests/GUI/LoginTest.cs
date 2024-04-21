@@ -9,7 +9,7 @@ public class LoginTest : BaseGuiTest
     [Category("Positive")]
     public void SuccessfulLoginTest()
     {
-        Assert.That(NavigationSteps
+        Assert.That(_navigationSteps
             .SuccessfulLogin(Configurator.Users.First(x => x.Email == "polinaholod97@gmail.com"))
             .TitleLabel
             .Displayed);

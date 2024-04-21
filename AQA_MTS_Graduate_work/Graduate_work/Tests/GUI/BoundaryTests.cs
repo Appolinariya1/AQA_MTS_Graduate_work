@@ -6,14 +6,12 @@ namespace Graduate_work.Tests.GUI;
 public class BoundaryTests : BaseGuiTest
 {
     private ProjectsPage _projectsPage;
-    private ProjectsSteps _projectsSteps;
 
     [SetUp]
     public void BoundaryTestsInit()
     {
-        _projectsPage = NavigationSteps
+        _projectsPage = _navigationSteps
             .NavigateToProjectsPage();
-        _projectsSteps = new ProjectsSteps(Driver, _projectsPage);
     }
 
     [Test]
@@ -25,6 +23,10 @@ public class BoundaryTests : BaseGuiTest
             .CreateNewProject("MinProject", "ps",
                 "few sentences about project", "Private", "NoOne")
             .IsPageOpened);
+        
+        _navigationSteps.NavigateToProjectsPageFromMenu();
+        _projectsPage.FillSearchForProjects("MinProject");
+        _projectsSteps.DeleteProject();
     }
 
     [Test]
@@ -36,6 +38,10 @@ public class BoundaryTests : BaseGuiTest
             .CreateNewProject("MaxProject", "0123456789",
                 "few sentences about project", "Private", "NoOne")
             .IsPageOpened);
+        
+        _navigationSteps.NavigateToProjectsPageFromMenu();
+        _projectsPage.FillSearchForProjects("MaxProject");
+        _projectsSteps.DeleteProject();
     }
 
     [Test]
@@ -61,10 +67,4 @@ public class BoundaryTests : BaseGuiTest
                 .MaxCharsPrCodeErrorLabel.Text.Trim(),
             Is.EqualTo("The code may not be greater than 10 characters."));
     }
-
-    /*[OneTimeTearDown]
-    public void DeleteCreatedProjectsTearDown()
-    {
-       //допишу после создания метода удаления проекта 
-    }*/
 }
