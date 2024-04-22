@@ -9,15 +9,17 @@ public class DialogWindowTest : BaseGuiTest
     [SetUp]
     public void DialogWindowTestInit()
     {
-        _projectsPage = NavigationSteps
+        _projectsPage = _navigationSteps
             .NavigateToProjectsPage();
     }
 
     [Test]
+    [Description("Тест отображения диалогового окна")]
+    [Category("Positive")]
     public void DialogWindowCreateProjectTest()
     {
-        _projectsPage.ClickCreateProjectButton();
+        var modal = _projectsPage.ClickCreateNewProjectButton();
 
-        Assert.That(_projectsPage.CreateProjectModal.Displayed);
+        Assert.That(modal.ModalElement.Displayed);
     }
 }

@@ -7,6 +7,6 @@ public class BaseApiTest
 {
     protected IWebDriver Driver { get; private set; }
 
-    protected NavigationSteps NavigationSteps;
+    protected NavigationSteps _navigationSteps;
     
 }

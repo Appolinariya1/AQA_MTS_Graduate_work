@@ -6,7 +6,7 @@
 trigger:
 - main
 - develop
-- feature/page_object
+- feature/GUI
 
 pool: local
 
@@ -29,6 +29,7 @@ steps:
 
 - task: PublishAllureReport@1
   displayName: Publish Report
+  condition: always()
   inputs:
     allureVersion: 2.27.0
     testResultsDir: .\AQA_MTS_Graduate_work\Graduate_work\bin\Debug\net8.0\allure-results
