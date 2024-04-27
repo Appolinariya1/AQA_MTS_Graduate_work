@@ -40,6 +40,7 @@ namespace Graduate_work.Helpers.Configuration
                 var child = Configuration.GetSection("AppSettings");
 
                 appSettings.URL = child["URL"];
+                appSettings.API_URL = child["API_URL"];
 
                 return appSettings;
             }

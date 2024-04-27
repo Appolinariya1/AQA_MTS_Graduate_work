@@ -1,12 +1,18 @@
-using Graduate_work.Steps;
-using OpenQA.Selenium;
+using Graduate_work.Clients;
+using NLog;
+using NUnit.Allure.Core;
 
 namespace Graduate_work.Tests.API;
 
+[Parallelizable(scope: ParallelScope.Fixtures)]
+[AllureNUnit]
 public class BaseApiTest
 {
-    protected IWebDriver Driver { get; private set; }
+    private readonly Logger _logger = LogManager.GetCurrentClassLogger();
 
-    protected NavigationSteps _navigationSteps;
-    
+    [OneTimeSetUp]
+    public void SetUpApi()
+    {
+        var restClient = new RestClientExtended();
+    }
 }
