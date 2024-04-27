@@ -5,7 +5,7 @@ using RestSharp;
 
 namespace Graduate_work.Clients;
 
-public class RestClientExtended
+public sealed class RestClientExtended
 {
     private readonly RestClient _client;
     private readonly Logger _logger = LogManager.GetCurrentClassLogger();

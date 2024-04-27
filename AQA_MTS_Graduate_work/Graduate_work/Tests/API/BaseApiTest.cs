@@ -1,8 +1,6 @@
 using Graduate_work.Clients;
-using Graduate_work.Steps;
 using NLog;
 using NUnit.Allure.Core;
-using OpenQA.Selenium;
 
 namespace Graduate_work.Tests.API;
 
