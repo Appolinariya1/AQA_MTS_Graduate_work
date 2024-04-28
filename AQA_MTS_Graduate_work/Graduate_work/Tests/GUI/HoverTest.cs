@@ -21,7 +21,7 @@ public class HoverTest : BaseGuiTest
     [Test]
     [Description("Тест на проверку всплывающего сообщения")]
     [Category("Positive")]
-    public void HoverChatTest()
+    public void HoverCreateSuiteOrCaseTest()
     {
         Actions actions = new Actions(Driver);
         actions.MoveToElement(_projectPage.CreateSuiteOrCaseButton, 10, 10).Perform();
