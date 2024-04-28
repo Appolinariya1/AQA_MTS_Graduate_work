@@ -41,6 +41,7 @@ namespace Graduate_work.Helpers.Configuration
 
                 appSettings.URL = child["URL"];
                 appSettings.API_URL = child["API_URL"];
+                appSettings.Token = child["Token"];
 
                 return appSettings;
             }

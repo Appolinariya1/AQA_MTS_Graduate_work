@@ -1,6 +1,7 @@
 using System.Net;
 using Graduate_work.Clients;
 using Graduate_work.Models;
+using Graduate_work.Models.API;
 using RestSharp;
 
 namespace Graduate_work.Services;

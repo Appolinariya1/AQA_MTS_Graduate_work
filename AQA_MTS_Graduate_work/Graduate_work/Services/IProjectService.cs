@@ -1,5 +1,6 @@
 using System.Net;
 using Graduate_work.Models;
+using Graduate_work.Models.API;
 
 namespace Graduate_work.Services;
 
