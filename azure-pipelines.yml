@@ -6,7 +6,7 @@
 trigger:
 - main
 - develop
-- feature/API_Tests
+- feature/API_tests
 
 pool: local
 
