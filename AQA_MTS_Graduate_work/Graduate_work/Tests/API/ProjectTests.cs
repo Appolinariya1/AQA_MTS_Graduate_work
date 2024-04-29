@@ -21,12 +21,12 @@ public class ProjectTests : BaseApiTest
         string projectJson = File.ReadAllText(@"Resources\test_Project.json");
         var projectObjectFromJson = JsonConvert.DeserializeObject<Project>(projectJson);
 
-        var actualProject = await ProjectService?.CreateNewProject(projectObjectFromJson);
+        var actualProject = await ProjectService.CreateNewProject(projectObjectFromJson);
 
         Assert.Multiple(() =>
         {
             Assert.That(actualProject.Status, Is.EqualTo(true));
-            Assert.That(actualProject.Result?.Code, Is.EqualTo(projectObjectFromJson?.Code.ToUpper()));
+            Assert.That(actualProject.Result?.Code, Is.EqualTo(projectObjectFromJson.Code.ToUpper()));
         });
 
         _project = actualProject.Result;
@@ -81,7 +81,7 @@ public class ProjectTests : BaseApiTest
         string projectJson = File.ReadAllText(@"Resources\test_Project.json");
         var projectObjectFromJson = JsonConvert.DeserializeObject<Project>(projectJson);
 
-        var result = await ProjectService?.DeleteProjectByCode(projectObjectFromJson.Code.ToUpper());
+        var result = await ProjectService.DeleteProjectByCode(projectObjectFromJson.Code.ToUpper());
 
         var deletedProject = await ProjectService.GetProjectByCode(projectObjectFromJson.Code.ToUpper());
 
@@ -102,7 +102,7 @@ public class ProjectTests : BaseApiTest
     {
         var code = "KUKU102030FAKE";
 
-        var result = await ProjectService?.DeleteProjectByCode(code);
+        var result = await ProjectService.DeleteProjectByCode(code);
 
         Assert.Multiple(() =>
         {
@@ -119,7 +119,7 @@ public class ProjectTests : BaseApiTest
     public async Task CreateProjectWithoutCodeTest()
     {
         var project = new Project() {Title = "Pupupu"};
-        var result = await ProjectService?.CreateNewProject(project);
+        var result = await ProjectService.CreateNewProject(project);
 
         Assert.Multiple(() =>
         {

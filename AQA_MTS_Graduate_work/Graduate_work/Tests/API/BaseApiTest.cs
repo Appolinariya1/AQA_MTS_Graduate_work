@@ -11,7 +11,7 @@ namespace Graduate_work.Tests.API;
 public class BaseApiTest
 {
     protected readonly Logger Logger = LogManager.GetCurrentClassLogger();
-    protected ProjectService? ProjectService;
+    protected ProjectService ProjectService;
 
     [OneTimeSetUp]
     public void SetUpApi()
