@@ -1,6 +1,7 @@
 using Graduate_work.Models.API;
 using Newtonsoft.Json;
 using NLog;
+using NUnit.Allure.Attributes;
 
 namespace Graduate_work.Tests.API;
 
@@ -12,7 +13,8 @@ public class ProjectTests : BaseApiTest
 
     [Test]
     [Description("Тест создания проекта")]
-    [Category("NFE")]
+    [Category("POST")]
+    [AllureFeature("NFE")]
     [Order(1)]
     public async Task CreateProjectTest()
     {
@@ -33,7 +35,8 @@ public class ProjectTests : BaseApiTest
 
     [Test]
     [Description("Тест получения проекта по коду")]
-    [Category("NFE")]
+    [Category("GET")]
+    [AllureFeature("NFE")]
     [Order(2)]
     public async Task GetProjectByCode()
     {
@@ -54,7 +57,8 @@ public class ProjectTests : BaseApiTest
 
     [Test]
     [Description("Тест получения всех проектов")]
-    [Category("NFE")]
+    [Category("GET")]
+    [AllureFeature("NFE")]
     [Order(3)]
     public async Task GetAllProjects()
     {
@@ -69,7 +73,8 @@ public class ProjectTests : BaseApiTest
 
     [Test]
     [Description("Тест удаления проекта по коду")]
-    [Category("NFE")]
+    [Category("DELETE")]
+    [AllureFeature("NFE")]
     [Order(4)]
     public async Task DeleteProjectTest()
     {
@@ -90,7 +95,8 @@ public class ProjectTests : BaseApiTest
 
     [Test]
     [Description("Тест удаления проекта по несуществующему коду")]
-    [Category("AFE")]
+    [Category("DELETE")]
+    [AllureFeature("AFE")]
     [Order(5)]
     public async Task DeleteFakeProjectTest()
     {
@@ -107,7 +113,8 @@ public class ProjectTests : BaseApiTest
 
     [Test]
     [Description("Тест создания проекта без кода")]
-    [Category("AFE")]
+    [Category("POST")]
+    [AllureFeature("AFE")]
     [Order(6)]
     public async Task CreateProjectWithoutCodeTest()
     {

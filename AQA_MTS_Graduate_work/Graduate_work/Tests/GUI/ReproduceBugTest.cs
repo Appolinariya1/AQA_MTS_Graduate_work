@@ -1,4 +1,5 @@
 using Graduate_work.Pages;
+using NUnit.Allure.Attributes;
 
 namespace Graduate_work.Tests.GUI;
 
@@ -15,7 +16,7 @@ public class ReproduceBugTest : BaseGuiTest
     
     [Test]
     [Description("Тест, воспроизводящий дефект")]
-    [Category("Negative")]
+    [AllureFeature("Negative")]
     public void ReproduceFakeBugTest()
     {
         Assert.That(_projectsSteps

@@ -1,4 +1,5 @@
 using Graduate_work.Helpers.Configuration;
+using NUnit.Allure.Attributes;
 
 namespace Graduate_work.Tests.GUI;
 
@@ -6,7 +7,7 @@ public class LoginTest : BaseGuiTest
 {
     [Test]
     [Description("Тест успешного входа в систему")]
-    [Category("Positive")]
+    [AllureFeature("Positive")]
     public void SuccessfulLoginTest()
     {
         Assert.That(_navigationSteps

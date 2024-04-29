@@ -1,4 +1,5 @@
 using Graduate_work.Pages;
+using NUnit.Allure.Attributes;
 using OpenQA.Selenium;
 using OpenQA.Selenium.Interactions;
 
@@ -20,7 +21,7 @@ public class HoverTest : BaseGuiTest
 
     [Test]
     [Description("Тест на проверку всплывающего сообщения")]
-    [Category("Positive")]
+    [AllureFeature("Positive")]
     public void HoverCreateSuiteOrCaseTest()
     {
         Actions actions = new Actions(Driver);
