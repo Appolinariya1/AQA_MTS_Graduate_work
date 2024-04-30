@@ -10,7 +10,6 @@ public class ProjectTests : BaseApiTest
     private readonly Logger _logger = LogManager.GetCurrentClassLogger();
     private Project? _project;
 
-
     [Test]
     [Description("Тест создания проекта")]
     [Category("POST")]
@@ -118,7 +117,7 @@ public class ProjectTests : BaseApiTest
     [Order(6)]
     public async Task CreateProjectWithoutCodeTest()
     {
-        var project = new Project() {Title = "Pupupu"};
+        var project = new Project() { Title = "Pupupu" };
         var result = await ProjectService.CreateNewProject(project);
 
         Assert.Multiple(() =>
