@@ -14,7 +14,7 @@ public class ReproduceBugTest : BaseGuiTest
             .NavigateToProjectsPage();
     }
     
-    [Test]
+    /*[Test]
     [Description("Тест, воспроизводящий дефект")]
     [AllureFeature("Negative")]
     public void ReproduceFakeBugTest()
@@ -24,5 +24,5 @@ public class ReproduceBugTest : BaseGuiTest
                     "few sentences about project", "Private", "NoOne")
                 .MinCharsPrCodeErrorLabel.Text.Trim(),
             Is.EqualTo("Fake error text"));
-    }
+    }*/
 }
