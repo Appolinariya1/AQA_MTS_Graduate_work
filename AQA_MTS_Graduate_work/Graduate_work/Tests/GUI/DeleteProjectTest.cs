@@ -1,5 +1,6 @@
 using Graduate_work.Pages;
 using Graduate_work.Steps;
+using NUnit.Allure.Attributes;
 
 namespace Graduate_work.Tests.GUI;
 
@@ -16,7 +17,7 @@ public class DeleteProjectTest : BaseGuiTest
 
     [Test]
     [Description("Тест на удаление сущности / проекта")]
-    [Category("Positive")]
+    [AllureFeature("Positive")]
     public void DeleteOneProjectTest()
     {
         var projectName = "TestProject";

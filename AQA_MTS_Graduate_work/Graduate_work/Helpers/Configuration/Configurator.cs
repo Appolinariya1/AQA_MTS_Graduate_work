@@ -41,11 +41,12 @@ namespace Graduate_work.Helpers.Configuration
 
                 appSettings.URL = child["URL"];
                 appSettings.API_URL = child["API_URL"];
+                appSettings.Token = child["Token"];
 
                 return appSettings;
             }
         }
-        
+
         public static List<User?> Users
         {
             get
@@ -54,8 +55,11 @@ namespace Graduate_work.Helpers.Configuration
                 var child = Configuration.GetSection("Users");
                 foreach (var section in child.GetChildren())
                 {
-                    var user = new User(section["Email"], section["Password"]);
-                    
+                    var user = new User.Builder()
+                        .SetEmail(section["Email"])
+                        .SetPassword(section["Password"])
+                        .Build();
+
                     users.Add(user);
                 }
 

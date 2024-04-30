@@ -1,4 +1,5 @@
 using Graduate_work.Pages;
+using NUnit.Allure.Attributes;
 
 namespace Graduate_work.Tests.GUI;
 
@@ -15,7 +16,7 @@ public class DialogWindowTest : BaseGuiTest
 
     [Test]
     [Description("Тест отображения диалогового окна")]
-    [Category("Positive")]
+    [AllureFeature("Positive")]
     public void DialogWindowCreateProjectTest()
     {
         var modal = _projectsPage.ClickCreateNewProjectButton();

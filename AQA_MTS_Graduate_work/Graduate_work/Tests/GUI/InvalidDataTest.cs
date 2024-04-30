@@ -1,10 +1,12 @@
+using NUnit.Allure.Attributes;
+
 namespace Graduate_work.Tests.GUI;
 
 public class InvalidDataTest : BaseGuiTest
 {
     [Test]
     [Description("Тест на использование некорректных данных")]
-    [Category("Negative")]
+    [AllureFeature("Negative")]
     public void InvalidLoginTest()
     {
         Assert.That(_navigationSteps

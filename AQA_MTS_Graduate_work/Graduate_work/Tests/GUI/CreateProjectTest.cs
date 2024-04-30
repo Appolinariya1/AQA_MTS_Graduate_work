@@ -1,5 +1,6 @@
 using Graduate_work.Pages;
 using Graduate_work.Steps;
+using NUnit.Allure.Attributes;
 
 namespace Graduate_work.Tests.GUI;
 
@@ -17,7 +18,7 @@ public class CreateProjectTest : BaseGuiTest
     
     [Test]
     [Description("Тест на создание сущности / проекта")]
-    [Category("Positive")]
+    [AllureFeature("Positive")]
     public void CreateNewProjectTest()
     {
         Assert.That(_projectsSteps

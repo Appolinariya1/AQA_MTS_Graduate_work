@@ -12,7 +12,7 @@ public class CreateProjectModal : BaseModal
 
     private static readonly By ProjectNameInputBy = By.Id("project-name");
     private static readonly By ProjectCodeInputBy = By.Id("project-code");
-    private static readonly By ProjectDescritpionAreaBy = By.Id("description-area");
+    private static readonly By ProjectDescriptionAreaBy = By.Id("description-area");
     private static readonly By ProjectAccessPrivateInputBy = By.XPath("//input[@value='private']");
     private static readonly By ProjectAccessPublicInputBy = By.XPath("//input[@value='public']");
     private static readonly By ProjectMemberAccessAllBy = By.XPath("//input[@value='all']");
@@ -38,7 +38,7 @@ public class CreateProjectModal : BaseModal
     public IWebElement ModalElement => WaitsHelper.WaitForExists(ModalElementBy);
     public IWebElement ProjectNameInput => WaitsHelper.WaitForExists(ProjectNameInputBy);
     public IWebElement ProjectCodeInput => WaitsHelper.WaitForExists(ProjectCodeInputBy);
-    public IWebElement ProjectDescriptionArea => WaitsHelper.WaitForExists(ProjectDescritpionAreaBy);
+    public IWebElement ProjectDescriptionArea => WaitsHelper.WaitForExists(ProjectDescriptionAreaBy);
     public IWebElement ProjectAccessPrivateInput => WaitsHelper.WaitForExists(ProjectAccessPrivateInputBy);
     public IWebElement ProjectAccessPublicInput => WaitsHelper.WaitForExists(ProjectAccessPublicInputBy);
     public IWebElement ProjectMemberAccessAll => WaitsHelper.WaitForExists(ProjectMemberAccessAllBy);

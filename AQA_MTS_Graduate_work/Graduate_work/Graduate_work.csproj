@@ -37,6 +37,14 @@
       <Content Include="Resources\cat.jpg">
         <CopyToOutputDirectory>Always</CopyToOutputDirectory>
       </Content>
+      <None Remove="Resources\test_Project.json" />
+      <Content Include="Resources\test_Project.json">
+        <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+      </Content>
+      <None Remove="NLog.config" />
+      <Content Include="NLog.config">
+        <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+      </Content>
     </ItemGroup>
 
 </Project>

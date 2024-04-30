@@ -1,5 +1,6 @@
 using System.Reflection;
 using Graduate_work.Pages;
+using NUnit.Allure.Attributes;
 
 namespace Graduate_work.Tests.GUI;
 
@@ -21,7 +22,7 @@ public class UploadTest : BaseGuiTest
 
     [Test]
     [Description("Тест на загрузку файла в проект")]
-    [Category("Positive")]
+    [AllureFeature("Positive")]
     public void UploadProjectFileTest()
     {
         _projectPage.ClickProjectSettingsButton();

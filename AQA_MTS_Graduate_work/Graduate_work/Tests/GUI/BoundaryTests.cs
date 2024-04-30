@@ -1,5 +1,6 @@
 using Graduate_work.Pages;
 using Graduate_work.Steps;
+using NUnit.Allure.Attributes;
 
 namespace Graduate_work.Tests.GUI;
 
@@ -16,7 +17,7 @@ public class BoundaryTests : BaseGuiTest
 
     [Test]
     [Description("Тест на проверку поля для ввода на граничные значения (2)")]
-    [Category("Positive")]
+    [AllureFeature("Positive")]
     public void MinValueTest()
     {
         Assert.That(_projectsSteps
@@ -31,7 +32,7 @@ public class BoundaryTests : BaseGuiTest
 
     [Test]
     [Description("Тест на проверку поля для ввода на граничные значения (10)")]
-    [Category("Positive")]
+    [AllureFeature("Positive")]
     public void MaxValueTest()
     {
         Assert.That(_projectsSteps
@@ -46,7 +47,7 @@ public class BoundaryTests : BaseGuiTest
 
     [Test]
     [Description("Тест на проверку поля для ввода на граничные значения (1)")]
-    [Category("Negative")]
+    [AllureFeature("Negative")]
     public void MinOutOfRangeValueTest()
     {
         Assert.That(_projectsSteps
@@ -58,7 +59,7 @@ public class BoundaryTests : BaseGuiTest
 
     [Test]
     [Description("Тест на проверку поля для ввода на граничные значения (11)")]
-    [Category("Negative")]
+    [AllureFeature("Negative")]
     public void MaxOutOfRangeValueTest()
     {
         Assert.That(_projectsSteps

@@ -3,6 +3,7 @@ using Graduate_work.Core;
 using Graduate_work.Helpers.Configuration;
 using Graduate_work.Pages;
 using Graduate_work.Steps;
+using NUnit.Allure.Attributes;
 using NUnit.Allure.Core;
 using OpenQA.Selenium;
 
@@ -10,6 +11,7 @@ namespace Graduate_work.Tests.GUI;
 
 [Parallelizable(scope: ParallelScope.All)]
 [FixtureLifeCycle(LifeCycle.InstancePerTestCase)]
+[AllureSuite("GUI Tests")]
 [AllureNUnit]
 public abstract class BaseGuiTest
 {
@@ -17,12 +19,6 @@ public abstract class BaseGuiTest
     protected NavigationSteps _navigationSteps;
     protected ProjectsSteps _projectsSteps;
     protected ProjectSteps _projectSteps;
-
-    [OneTimeSetUp]
-    public static void GlobalSetup()
-    {
-        AllureLifecycle.Instance.CleanupResultDirectory();
-    }
 
     [SetUp]
     public void Setup()

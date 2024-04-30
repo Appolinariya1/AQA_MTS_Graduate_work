@@ -1,6 +1,6 @@
 using System.Text.Json.Serialization;
 
-namespace Graduate_work.Models;
+namespace Graduate_work.Models.API;
 
 public class ApiListResult<T>
 {
