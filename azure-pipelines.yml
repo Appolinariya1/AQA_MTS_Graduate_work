@@ -16,6 +16,12 @@ variables:
   buildConfiguration: 'Debug'
 
 steps:
+- task: DeleteFiles@1
+  displayName: 'Cleanup AllureResult'
+  inputs:
+    contents: |
+      .\AQA_MTS_Graduate_work\Graduate_work\bin\Debug\net8.0\allure-results
+
 - task: NuGetToolInstaller@1
 
 - task: NuGetCommand@2

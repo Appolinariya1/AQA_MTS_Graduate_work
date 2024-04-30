@@ -20,12 +20,6 @@ public abstract class BaseGuiTest
     protected ProjectsSteps _projectsSteps;
     protected ProjectSteps _projectSteps;
 
-    [OneTimeSetUp]
-    public static void GlobalSetup()
-    {
-        AllureLifecycle.Instance.CleanupResultDirectory();
-    }
-
     [SetUp]
     public void Setup()
     {
