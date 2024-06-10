@@ -17,7 +17,7 @@ public class ProjectTests : BaseApiTest
     [Order(1)]
     public async Task CreateProjectTest()
     {
-        string projectJson = File.ReadAllText(@"Resources\test_Project.json");
+        string projectJson = File.ReadAllText(Path.Combine("Resources", "test_Project.json"));
         var projectObjectFromJson = JsonConvert.DeserializeObject<Project>(projectJson);
 
         var actualProject = await ProjectService.CreateNewProject(projectObjectFromJson);
