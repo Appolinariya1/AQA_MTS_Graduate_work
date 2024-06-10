@@ -1,4 +1,5 @@
 using Graduate_work.Pages;
+using NUnit.Allure.Attributes;
 
 namespace Graduate_work.Tests.GUI;
 
@@ -9,15 +10,17 @@ public class DialogWindowTest : BaseGuiTest
     [SetUp]
     public void DialogWindowTestInit()
     {
-        _projectsPage = NavigationSteps
+        _projectsPage = _navigationSteps
             .NavigateToProjectsPage();
     }
 
     [Test]
+    [Description("Тест отображения диалогового окна")]
+    [AllureFeature("Positive")]
     public void DialogWindowCreateProjectTest()
     {
-        _projectsPage.ClickCreateProjectButton();
+        var modal = _projectsPage.ClickCreateNewProjectButton();
 
-        Assert.That(_projectsPage.CreateProjectModal.Displayed);
+        Assert.That(modal.ModalElement.Displayed);
     }
 }
